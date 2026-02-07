@@ -1,0 +1,28 @@
+
+> app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+✓ Ready in 1985ms
+○ Compiling / ...
+ GET / 200 in 7.6s (compile: 7.0s, render: 689ms)
+ GET / 200 in 106ms (compile: 8ms, render: 97ms)
+Error: Route "/work/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at <unknown> (app/work/[slug]/page.tsx:18:66)
+    at Array.find (<anonymous>)
+    at ProjectPage (app/work/[slug]/page.tsx:18:28)
+  16 |
+  17 | export default function ProjectPage({ params }: Props) {
+> 18 |   const project = projects.find((p) => p.slug.current === params.slug);
+     |                                                                  ^
+  19 |
+  20 |   if (!project) {
+  21 |     notFound();
+ GET /work/neon-genesis 200 in 2.1s (compile: 1891ms, generate-params: 630ms, render: 180ms)
+✓ Compiled in 23ms
+ GET / 200 in 118ms (compile: 8ms, render: 110ms)
+ GET /work/neon-genesis 200 in 230ms (compile: 170ms, generate-params: 37ms, render: 60ms)
